@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class splitpercentage extends AppCompatActivity {
+public class SplitPercentage extends AppCompatActivity {
     EditText numText;
     EditText priceText;
     float evenSplit;
@@ -34,7 +34,7 @@ public class splitpercentage extends AppCompatActivity {
             float price = Float.parseFloat(priceText.getText().toString());
 
 
-            Intent intent = new Intent(this, splitpercentageinfo.class);
+            Intent intent = new Intent(this, SplitPercentageInfo.class);
             Bundle extras = new Bundle();
             extras.putInt("personNum",num);
             extras.putFloat("totalPrice",price);

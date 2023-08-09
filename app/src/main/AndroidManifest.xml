@@ -16,10 +16,10 @@
             android:name=".SplitEvenInfo"
             android:exported="false" />
         <activity
-            android:name=".splitpercentageinfo"
+            android:name=".SplitPercentageInfo"
             android:exported="false" />
         <activity
-            android:name=".splitpercentage"
+            android:name=".SplitPercentage"
             android:exported="false" />
         <activity
             android:name=".SplitEven"

@@ -16,7 +16,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class splitpercentageinfo extends AppCompatActivity {
+public class SplitPercentageInfo extends AppCompatActivity {
 
 
 
@@ -84,7 +84,7 @@ public class splitpercentageinfo extends AppCompatActivity {
 
                         //Avoid empty input field on name
                         if (TextUtils.isEmpty(nameText.getText().toString())){
-                            Toast.makeText(splitpercentageinfo.this, "Please enter username!",
+                            Toast.makeText(SplitPercentageInfo.this, "Please enter username!",
                             Toast.LENGTH_SHORT).show();
                         }
                         else{
@@ -94,7 +94,7 @@ public class splitpercentageinfo extends AppCompatActivity {
                         //Avoid empty input field on percentage
 
                         if (TextUtils.isEmpty(percentageText.getText().toString())){
-                            Toast.makeText(splitpercentageinfo.this, "Please enter percentage!",
+                            Toast.makeText(SplitPercentageInfo.this, "Please enter percentage!",
                                     Toast.LENGTH_SHORT).show();
                         }
                         else{

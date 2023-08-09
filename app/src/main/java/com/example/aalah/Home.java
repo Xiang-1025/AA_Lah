@@ -25,7 +25,7 @@ public class Home extends AppCompatActivity {
 
         percentageSplitBtn.setOnClickListener(view -> {
             Intent splitPercentageIntent = new Intent(
-                    getApplicationContext(), splitpercentage.class
+                    getApplicationContext(), SplitPercentage.class
             );
             startActivity(splitPercentageIntent);
         });

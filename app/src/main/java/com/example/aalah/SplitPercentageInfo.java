@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,6 +22,7 @@ public class SplitPercentageInfo extends AppCompatActivity {
 
 
 
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     //Define ArrayList to store user input and calculated payment
     ArrayList<String> name = new ArrayList<String>();
@@ -104,7 +106,9 @@ public class SplitPercentageInfo extends AppCompatActivity {
                         //if both validation passed, execute
                         if (validate==2){
                             //add info into arraylist
-                            pay.add((price*(percentage.get(curNum)/100)));
+                            String calculated;
+                            calculated = df.format((price*(percentage.get(curNum)/100)));
+                            pay.add(Float.parseFloat(calculated));
 
                             //Clear both input field
                             nameText.setText("");

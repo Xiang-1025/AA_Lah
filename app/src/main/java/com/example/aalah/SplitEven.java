@@ -3,9 +3,11 @@ package com.example.aalah;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class SplitEven extends AppCompatActivity {
@@ -29,25 +31,35 @@ public class SplitEven extends AppCompatActivity {
             this.finish();
         });
 
-
         calcBtn.setOnClickListener(view -> {
             numText   = (EditText)findViewById(R.id.NumInput);
             priceText   = (EditText)findViewById(R.id.PriceInput);
-            int num = Integer.parseInt(numText.getText().toString());
-            float numberFloat = num;
-            float price = Float.parseFloat(priceText.getText().toString());
-            evenSplit = price/numberFloat;
+            if (TextUtils.isEmpty(numText.getText().toString())||TextUtils.isEmpty(priceText.getText().toString())){
+                Toast.makeText(SplitEven.this, "Please enter information!",
+                        Toast.LENGTH_SHORT).show();
+            }
+            else{
+
+                int num = Integer.parseInt(numText.getText().toString());
+                float numberFloat = num;
+                float price = Float.parseFloat(priceText.getText().toString());
+                evenSplit = price/numberFloat;
 
 
-            String result = String.format("%.2f",evenSplit);
-            Intent intent = new Intent(this, SplitEvenInfo.class);
+                String result = String.format("%.2f",evenSplit);
+                Intent intent = new Intent(this, SplitEvenInfo.class);
 
-            Bundle extras = new Bundle();
-            extras.putInt("personNum",num);
-            extras.putFloat("totalPrice",price);
+                Bundle extras = new Bundle();
+                extras.putInt("personNum",num);
+                extras.putFloat("totalPrice",price);
 
-            intent.putExtras(extras);
-            startActivity(intent);
+                intent.putExtras(extras);
+                startActivity(intent);
+
+
+
+            }
+
 
 
 

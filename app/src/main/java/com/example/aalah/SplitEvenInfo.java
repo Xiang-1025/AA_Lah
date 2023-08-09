@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -20,6 +21,8 @@ public class SplitEvenInfo extends AppCompatActivity {
 
     ArrayList<String> name = new ArrayList<String>();
     ArrayList<Float> pay = new ArrayList<Float>();
+    private static final DecimalFormat df = new DecimalFormat("0.00");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,7 +46,8 @@ public class SplitEvenInfo extends AppCompatActivity {
         SQLAd = new SQLiteAdapter(this);
 
         tv2.setText("Person "+1+"/"+personNum);
-        display2.setText("Total number of person: "+Integer.toString(personNum));
+        display2.setText("Total price: RM "+Float.toString(price));
+        display2.append("\nTotal number of person: "+Float.toString(personNum));
 
         //back to previous page
         backBtn.setOnClickListener( view ->{
@@ -70,7 +74,6 @@ public class SplitEvenInfo extends AppCompatActivity {
                 //Once clicked, if current number of person is not equal to total number of person, execute
                 display2.setText("");
                 if (curNum<personNum){
-                    float totalPercentage=0.00f;
 
                     //Avoid empty input field on name
                     if (TextUtils.isEmpty(nameText.getText().toString())){
@@ -89,8 +92,10 @@ public class SplitEvenInfo extends AppCompatActivity {
                     //if validation passed, execute
                     if (validate==1){
                         //add info into arraylist
-                        pay.add((price/personNum));
-                        display2.append(name.get(curNum)+"\n");
+                        String divided;
+                        divided = df.format(price/personNum);
+                        pay.add((Float.parseFloat(divided)));
+                        display2.append(pay.get(curNum)+"\n");
 
                         //Clear both input field
                         nameText.setText("");

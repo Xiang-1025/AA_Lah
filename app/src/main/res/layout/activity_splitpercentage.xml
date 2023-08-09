@@ -61,7 +61,7 @@
                 style="@style/EditViewStyle"
                 android:layout_height="70dp"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="phone"
                 android:text="0.00" />
 
         </LinearLayout>

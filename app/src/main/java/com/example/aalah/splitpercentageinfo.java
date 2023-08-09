@@ -1,6 +1,5 @@
 package com.example.aalah;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,7 +57,7 @@ public class splitpercentageinfo extends AppCompatActivity {
 
         home.setOnClickListener(view -> {
             Intent homeIntent = new Intent(
-                    getApplicationContext(), MainActivity.class
+                    getApplicationContext(), Home.class
             );
             startActivity(homeIntent);
         });

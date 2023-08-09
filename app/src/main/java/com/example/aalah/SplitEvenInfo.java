@@ -54,7 +54,7 @@ public class SplitEvenInfo extends AppCompatActivity {
 
             home.setOnClickListener(view -> {
                 Intent homeIntent = new Intent(
-                        getApplicationContext(), MainActivity.class
+                        getApplicationContext(), Home.class
                 );
                 startActivity(homeIntent);
             });

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GreenText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#009000</item>
+    </style>
+    <style name="EditViewStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">18sp</item>
+
+    </style>
+    <style name="TextViewStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="TitleViewStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#449e48</item>
+        <item name="android:textSize">29sp</item>
+    </style>
+
+    <style name="ButtonStyle" parent="TextAppearance.AppCompat">
+       <item name="android:background">@drawable/rounded_corner</item>
+
+    </style>
+
+</resources>
